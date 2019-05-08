@@ -1,0 +1,58 @@
+
+body,html{
+    background-color: rgb(16, 80, 80);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+form {
+    /* Sólo para centrar el formulario a la página */
+    position: absolute;
+    width: 400px;
+    /* Para ver el borde del formulario */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-color: #FDFEFE;
+    font-family: cursive;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form .ingresar {
+    text-align: center;
+    color: yellowgreen;
+}
+
+input {
+    display: block;
+    padding: 10px;
+    width: 95%;
+    font-size: 20px;
+}
+
+input[type="submit"]{
+    background: linear-gradient(#FFDA63, #FFB940);
+    border: 0;
+    color: brown;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+
+input[type="submit"]:hover{
+    opacity: 1;
+}
+
+input[type="submit"]:active{
+    transform: scale(0.95);
+}
+
+
+
+
