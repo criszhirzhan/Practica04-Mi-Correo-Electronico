@@ -1,62 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../config/styles/reset.css">
+        <link rel="stylesheet" href="../../config/styles/stylesCrUser.css">
+        <title>Formulario</title>
 </head>
 
 <body>
-    <form id="formulario01" method="POST" action="../controladores/crear_usuario.php">
 
-        <label for="codigo">ID (*)</label>
-        <input type="number" id="id" name="id" value="" placeholder="Ingrese ID ..." required />
-        <br>
-        <br>
-        <label for="cedula">Cedula (*)</label>
-        <input type="text" id="cedula" name="cedula" value="" maxlength="10" placeholder="Ingrese el número de cedula ..." required />
-        <br>
-        <br>
-        <label for="nombres">Nombres (*)</label>
-        <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres
-..." required />
-        <br>
-        <br>
-        <label for="apellidos">Apelidos (*)</label>
-        <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese sus dos apellidos
-..." required />
-        <br>
-        <br>
-        <label for="direccion">Dirección (*)</label>
-        <input type="text" id="direccion" name="direccion" value="" placeholder="Ingrese su dirección ..." required />
-        <br>
-        <br>
-        <label for="telefono">Teléfono (*)</label>
-        <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número telefónico
-..." required />
-        <br>
-        <br>
-        <label for="fecha">Fecha Nacimiento (*)</label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="" placeholder="Ingrese su
-fecha de nacimiento ..." required />
-        <br>
-        <br>
-        <label for="correo">Correo electrónico (*)</label>
-        <input type="email" id="correo" name="correo" value="" placeholder="Ingrese su correo electrónico
-..." required />
-        <br>
-        <br>
-        <label for="correo">Contraseña (*)</label>
-        <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su
-contraseña ..." required />
-        <br>
-        <br>
-        <label for="correo">Tipo Usuario (*)</label>
-        <input type="text" id="tipoUser" name="tipoUser" value="" placeholder="" required />
-        <br>
-        <br>
-        <input type="submit" id="crear" name="crear" value="Aceptar" />
-        <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
-    </form>
+        <div class="container">
+                <div class="form__top">
+                        <h2>Formulario <span>Registro</span></h2>
+                </div>
+                <form class="form__reg" method="POST" action="./controladores/crear_usuario.php">
+                        <input class="input" type="number" id="id" name="id" value="" placeholder="&#35; Ingrese ID ..." required />
+                        <input class="input" type="text" id="cedula" name="cedula" value="" maxlength="10"
+                                placeholder="&#127380; Ingrese el número de cedula ..." required />
+                        <input class="input" type="text" id="nombres" name="nombres" value="" placeholder="&#128100; Ingrese sus dos nombres..." required />
+                        <input class="input" type="text" id="apellidos" name="apellidos" value="" placeholder="&#128100; Ingrese sus dos apellidos..." required />
+                        <input class="input" type="text" id="direccion" name="direccion" value=""
+                                placeholder="&#8962; Ingrese su dirección ..." required />
+                        <input class="input" type="text" id="telefono" name="telefono" value="" placeholder="&#128222; Ingrese su número telefónico..." required />
+                        <input class="input" type="date" id="fechaNacimiento" name="fechaNacimiento" value="" placeholder="Ingrese su fecha de nacimiento ..." required />
+                        <input class="input" type="email" id="correo" name="correo" value="" placeholder="&#9993; Ingrese su correo electrónico..." required />
+                        <input class="input" type="password" id="contrasena" name="contrasena" value="" placeholder="&#42; Ingrese sucontraseña ..." required />
+                        <div class="btn_form">
+                                <input class="crear" type="submit" id="crear" name="crear" value="ACEPTAR" />
+                                <input class="cancelar" type="reset" id="cancelar" name="cancelar" value="CANCELAR" />
+                        </div>
+                </form>
+        </div>
+
 </body>
 
-</html> 
+</html>
