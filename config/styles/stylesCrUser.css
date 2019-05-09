@@ -4,24 +4,61 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
-body {
-	background-color: #9AD1ED;
+.contenedor {
+    background-image: url(../../config/images/fondo.png);
+    background-size: 100%;
+    /* background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
+form{
+    align-items: initial;
+}
+
+.perfil{
+    width: 150px;
+    height: 150px;
+    border-radius: 1rem;
+}
+
+
 .container {
-	max-width: 450px;
-	height: auto;
-	background-color: #EFEFEF;
+
+    max-width: 650px;
+	background: rgba(0, 0, 0, .3);
 	margin: 5% auto;
-	padding-bottom: 1rem;
-	
+    padding-bottom: 1rem;
+}
+
+.container1 {
+    width: 150%;
+    height: auto;
+
+}
+
+.cont {
+    width: 35%;
+    height: auto;
+    position: static;
+    float: left;
+}
+
+.containerPicture{
+    width: 30%;
+    height: auto;
+    position: relative;
+    float: right;
 }
 
 .form__top {
 	width: 100%;
 	text-align: center;
 	padding: 2rem 0 1rem;
-	border-top: solid .4rem #F39B53;
+	border-top: solid .4rem rgba(202, 16, 16, 0.2);
 	margin-bottom: 1rem;
 }
 
@@ -39,7 +76,7 @@ h2 span {
 	padding: 0 2rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+    justify-content: center;
 }
 
 .btn__form {
@@ -48,7 +85,12 @@ h2 span {
 	margin-top: 1rem;
 }
 
-.input, .crear, .cancelar{
+.input{
+    width: 300px;
+    border-radius: 1rem;
+}
+
+.input, .crear, .cancelar, .actualizar{
 	background-color: #EFEFEF;
 	padding: .5rem;
 	margin: .5rem 0;
@@ -65,7 +107,16 @@ h2 span {
 	width: 40%;
 	border-bottom: none;
 	background-color: #31B1E5;
-	color: white;
+    color: white;
+    border-radius: 1rem;
+}
+
+.actualizar{
+    width: 80%;
+    border-bottom: none;
+    align-content: center;
+    align-items: center;
+    border-radius: 1rem;
 }
 
 .cancelar {
@@ -73,9 +124,25 @@ h2 span {
 }
 
 .crear:hover {
+    cursor: pointer;
 	background-color: #4C9ED9;
 }
 
 .cancelar:hover{
+    cursor: pointer;
 	background-color: #FA9535;
+}
+
+.actualizar:hover{
+    cursor: pointer;
+	background-color: rgb(144, 147, 148);
+}
+
+
+.piePagina{
+    margin: 5px 0px 0px 0px;
+    padding: 10px;
+    width: 100%;
+    clear: both;
+    background: rgba(0, 0, 0, .3);
 }
