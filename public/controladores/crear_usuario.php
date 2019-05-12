@@ -13,7 +13,6 @@
  <?php
  //incluir conexión a la base de datos
  include '../../config/conexionBD.php';
- $codigo =isset($_POST["id"]) ? trim($_POST["id"]):null;
  $cedula = isset($_POST["cedula"]) ? trim($_POST["cedula"]) : null;
  $nombres = isset($_POST["nombres"]) ? mb_strtoupper(trim($_POST["nombres"]), 'UTF-8') : null;
  $apellidos = isset($_POST["apellidos"]) ? mb_strtoupper(trim($_POST["apellidos"]), 'UTF-8') : null;
@@ -23,8 +22,29 @@
  $fechaNacimiento = isset($_POST["fechaNacimiento"]) ? trim($_POST["fechaNacimiento"]): null;
  $contrasena = isset($_POST["contrasena"]) ? trim($_POST["contrasena"]) : null;
 
- $sql = "INSERT INTO usuario VALUES ('$codigo', '$cedula', '$nombres', '$apellidos', '$direccion', '$telefono',
-'$correo', MD5('$contrasena'), '$fechaNacimiento', 'N', null, null)";
+ //APARTADO DE LA FOTO
+ $fotoN=$_FILES["foto"]["name"];
+ echo "Nomre archivo = $fotoN";
+ $ruta=$_FILES["foto"]["tmp_name"];
+ echo "Ruta = $ruta";
+ if(empty($fotoN)){
+     $destino="../../config/fotos/perfil.jpg";
+ }else{
+    $random_digit = rand (0000,9999);
+	$new_foto = $random_digit. $fotoN;
+    $ruta=$_FILES["foto"]["tmp_name"];
+    echo "Ruta = $ruta";
+    $destino="../../config/fotos/".$new_foto;
+    $new_foto='';
+    echo "destino = $destino";
+    copy($ruta, $destino);
+ }
+
+
+
+
+ $sql = "INSERT INTO usuario() VALUES (0,'$cedula', '$nombres', '$apellidos', '$direccion', '$telefono',
+'$correo', MD5('$contrasena'), '$fechaNacimiento', 'N', null, null,'user','Yes','$destino')";
  if ($conn->query($sql) === TRUE) {
  echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
  } else {
