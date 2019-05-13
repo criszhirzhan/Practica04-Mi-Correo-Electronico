@@ -17,7 +17,7 @@ html {
 
 form{
     align-items: initial;
-    background-color: greenyellow;
+
 }
 
 .perfil{
@@ -35,7 +35,6 @@ form{
 	margin: 5% auto;
     padding-bottom: 1rem;
 
-    background-color: darkgreen;
 }
 
 .container1 {
@@ -43,8 +42,6 @@ form{
     height: auto;
     position: static;
     float: left;
-
-    background-color: blueviolet;
 
 }
 
@@ -55,7 +52,6 @@ form{
     position: relative;
     float: right;
 
-    background-color: aqua;
 }
 
 .form__top {
@@ -65,7 +61,7 @@ form{
 	border-top: solid .4rem rgba(202, 16, 16, 0.2);
     margin-bottom: 1rem;
     
-    background-color: cornflowerblue;
+  
 }
 
 .form__top h2 {
@@ -80,10 +76,10 @@ h2 span {
 
 .form__reg {
 	padding: 0 2rem;
-	display: flex;
+	/* display: flex; */
 	flex-direction: column;
     justify-content: center;
-}
+} 
 
 .btn__form {
 	display: flex;

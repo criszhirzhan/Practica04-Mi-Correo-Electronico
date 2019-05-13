@@ -7,18 +7,56 @@
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="../../config/styles/stylesLogin.css">
+    <link rel="stylesheet" href="../../config/styles/menuH.css">
 </head>
 
 <body>
-    <form id="formulario01" method="POST" action="../controladores/login.php">
-        <h2 class="ingresar">INGRESAR</h2>
-        <input type="text" id="correo" name="correo" value="" placeholder="&#128272; Usuario" />
-        <br><br>
-        <input type="password" id="contrasena" name="contrasena" value="" placeholder="&#128272; Contraseña" />
-        <br><br>
-        <input type="submit" id="login" name="login" value="Iniciar Sesión" />
 
-    </form>
+
+    <div class="contenedor">
+
+        <header>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="../../public/vista/crear_usuario.html">Registrarse</a></li>
+                </ul>
+            </div>
+
+        </header>
+
+
+        <form id="formulario01" method="POST" action="../controladores/login.php">
+            <h2 class="ingresar">INGRESAR</h2>
+            <input type="text" id="correo" name="correo" value="" placeholder="&#128272; Usuario" />
+            <br><br>
+            <input type="password" id="contrasena" name="contrasena" value="" placeholder="&#128272; Contraseña" />
+            <br><br>
+            <input type="submit" id="login" name="login" value="Iniciar Sesión" />
+
+        </form>
+
+    </div>
+
+    <div class="piePagina">
+
+        <footer>
+
+            <address>
+
+                Christian Daniel Zhirzhan Cabrera<br>
+                Universidad Politecnica Salesiana<br>
+                <a href="mailto:czhirzhanc@est.ups.edu.ec">Email</a><br>
+
+                <a href="tel:2520890  ">Clicka para llamar</a>
+
+            </address>
+            <br>
+            <p>&copy; Todos los derechos reservados</p>
+        </footer>
+    </div>
+
+
 
 </body>
 

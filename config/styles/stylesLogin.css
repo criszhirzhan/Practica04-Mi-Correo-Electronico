@@ -1,12 +1,14 @@
 
-body,html{
-    background-color: rgb(16, 80, 80);
+ body,html{
+    background-color: rgba(219, 135, 39, 0.897);
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     position: relative;
-}
+} 
+
+
 
 form {
     /* Sólo para centrar el formulario a la página */
@@ -16,16 +18,28 @@ form {
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
-    background-color: #FDFEFE;
+    background: rgba(0, 0, 0, .3);
     font-family: cursive;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.contenedor{
+    background-image: url(../../config/images/fondo.png);
+    background-size: 100%;
+    /* background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+ }
+
 form .ingresar {
     text-align: center;
-    color: yellowgreen;
+    color: #EDA135;
+
 }
 
 input {
@@ -33,6 +47,7 @@ input {
     padding: 10px;
     width: 95%;
     font-size: 20px;
+    background-color: #EFEFEF;
 }
 
 input[type="submit"]{
@@ -53,6 +68,11 @@ input[type="submit"]:active{
     transform: scale(0.95);
 }
 
-
-
+.piePagina{
+    margin: 5px 0px 0px 0px;
+    padding: 10px;
+    width: 100%;
+    clear: both;
+    background: rgba(0, 0, 0, .3);
+}
 
