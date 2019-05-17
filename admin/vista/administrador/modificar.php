@@ -22,55 +22,94 @@ function ConsultarUsuario($usu_codigo){
     $conn->close();
 }
 
-
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../../config/styles/reset.css">
+    <link rel="stylesheet" href="../../../config/styles/modificarStyles.css">
+    <link rel="stylesheet" href="../../../config/styles/menuH.css">
     <title>Modificar</title>
 </head>
-<body>
-        <form id="formulario02" method="POST" action="../../../admin/vista/usuario/modificarBD.php" >
 
-            <label for="codigo">Codigo (*)</label>
-            <input type="number" id="id" name="id" value="<?php echo $_GET['usu_codigo'] ?>"  required />
-            <br>
-            <br>
-            <label for="cedula">Cedula (*)</label>
-            <input type="text" id="cedula" name="cedula" value="<?php echo $consulta[0] ?>" maxlength="10" required />
-            <br>
-            <br>
-            <label for="nombres">Nombres (*)</label>
-            <input type="text" id="nombres" name="nombres" value="<?php echo $consulta[1] ?>" required />
-            <br>
-            <br>
-            <label for="apellidos">Apelidos (*)</label>
-            <input type="text" id="apellidos" name="apellidos" value="<?php echo $consulta[2] ?>"  required />
-            <br>
-            <br>
-            <label for="direccion">Dirección (*)</label>
-            <input type="text" id="direccion" name="direccion" value="<?php echo $consulta[3] ?>" required />
-            <br>
-            <br>
-            <label for="telefono">Teléfono (*)</label>
-            <input type="text" id="telefono" name="telefono" value="<?php echo $consulta[4] ?>"  required />
-            <br>
-            <br>
-            <label for="fecha">Fecha Nacimiento (*)</label>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $consulta[5] ?>"  required />
-            <br>
-            <br>
-            <label for="correo">Correo electrónico (*)</label>
-            <input type="email" id="correo" name="correo" value="<?php echo $consulta[6] ?>"  required />
-            <br>
-            <br>
-            <input type="submit" id="crear" name="crear" value="Aceptar" />
-            <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
-        </form>
+<body>
+
+    <div class="contenedor">
+
+        <div class="contenedor">
+
+            <header>
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="../../public/vista/crear_usuario.html">INDEX</a></li>
+                    </ul>
+                </div>
+
+            </header>
+
+            <form id="formulario02" method="POST" action="../../../admin/vista/usuario/modificarBD.php">
+                <div class="container1 ">
+
+                    <label for="cedula">Cedula (*)</label>
+                    <input type="text" id="cedula" name="cedula" value="<?php echo $consulta[0] ?>" maxlength="10"
+                        required />
+                    <br>
+                    <br>
+                    <label for="nombres">Nombres (*)</label>
+                    <input type="text" id="nombres" name="nombres" value="<?php echo $consulta[1] ?>" required />
+                    <br>
+                    <br>
+                    <label for="apellidos">Apelidos (*)</label>
+                    <input type="text" id="apellidos" name="apellidos" value="<?php echo $consulta[2] ?>" required />
+                    <br>
+                    <br>
+                    <label for="direccion">Dirección (*)</label>
+                    <input type="text" id="direccion" name="direccion" value="<?php echo $consulta[3] ?>" required />
+                    <br>
+                    <br>
+                    <label for="telefono">Teléfono (*)</label>
+                    <input type="text" id="telefono" name="telefono" value="<?php echo $consulta[4] ?>" required />
+                    <br>
+                    <br>
+                    <label for="fecha">Fecha Nacimiento (*)</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $consulta[5] ?>"
+                        required />
+                    <br>
+                    <br>
+                    <label for="correo">Correo electrónico (*)</label>
+                    <input type="email" id="correo" name="correo" value="<?php echo $consulta[6] ?>" required />
+                    <br>
+                    <br>
+                    <div class="btn_form">
+                        <input class="crear" type="submit" id="crear" name="crear" value="ACEPTAR" />
+                        <input class="cancelar" type="reset" id="cancelar" name="cancelar" value="CANCELAR" />
+                    </div>
+
+                </div>
+
+
+                <div class="containerPicture">
+
+                    <div class="btn_form">
+                        <img class="perfil" src="../../../config/fotos/perfil.jpg" alt="">
+                        <br>
+                        <input class="actualizar" type="file" id="foto" name="foto"
+                            value="../../config/images/perfil.jpg" />
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
 </body>
+
 </html>

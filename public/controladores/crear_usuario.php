@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
- <meta charset="UTF-8">
- <title>Crear Nuevo Usuario</title>
- <style type="text/css" rel="stylesheet">
- .error{
- color: red;
- }
- </style>
+    <meta charset="UTF-8">
+    <title>Crear Nuevo Usuario</title>
+    <style type="text/css" rel="stylesheet">
+    .error {
+        color: red;
+    }
+    </style>
 </head>
+
 <body>
- <?php
+    <?php
  //incluir conexión a la base de datos
  include '../../config/conexionBD.php';
  $cedula = isset($_POST["cedula"]) ? trim($_POST["cedula"]) : null;
@@ -27,6 +29,7 @@
  echo "Nomre archivo = $fotoN";
  $ruta=$_FILES["foto"]["tmp_name"];
  echo "Ruta = $ruta";
+ 
  if(empty($fotoN)){
      $destino="../../config/fotos/perfil.jpg";
  }else{
@@ -61,4 +64,5 @@
  
  ?>
 </body>
+
 </html>
