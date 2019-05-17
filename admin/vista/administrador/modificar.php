@@ -9,6 +9,7 @@ function ConsultarUsuario($usu_codigo){
     $filas=$result->fetch_assoc();
 
     return[
+        $filas['usu_codigo'],
         $filas['usu_cedula'],
         $filas['usu_nombres'],
         $filas['usu_apellidos'],
@@ -16,11 +17,13 @@ function ConsultarUsuario($usu_codigo){
         $filas['usu_telefono'],
         $filas['usu_fecha_nacimiento'],
         $filas['usu_correo'],
+        $filas['usu_foto'],
     
     ];
 
     $conn->close();
 }
+
 
 ?>
 
@@ -42,49 +45,54 @@ function ConsultarUsuario($usu_codigo){
 
     <div class="contenedor">
 
-        <div class="contenedor">
 
-            <header>
+        <header>
 
-                <div class="menu">
-                    <ul>
-                        <li><a href="../../public/vista/crear_usuario.html">INDEX</a></li>
-                    </ul>
-                </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.php">INDEX</a></li>
+                </ul>
+            </div>
 
-            </header>
+        </header>
 
-            <form id="formulario02" method="POST" action="../../../admin/vista/usuario/modificarBD.php">
+        <div class="container">
+            <div class="form__top">
+                <h2>Modificar <span>Datos</span></h2>
+            </div>
+
+            <form id="formulario02" method="POST" action="modificarBD.php" enctype="multipart/form-data">
                 <div class="container1 ">
+                    <input type="hidden" id="codigo" name="codigo" value="<?php echo $consulta[0] ?>">
 
                     <label for="cedula">Cedula (*)</label>
-                    <input type="text" id="cedula" name="cedula" value="<?php echo $consulta[0] ?>" maxlength="10"
+                    <input type="text" id="cedula" name="cedula" value="<?php echo $consulta[1] ?>" maxlength="10"
                         required />
                     <br>
                     <br>
                     <label for="nombres">Nombres (*)</label>
-                    <input type="text" id="nombres" name="nombres" value="<?php echo $consulta[1] ?>" required />
+                    <input type="text" id="nombres" name="nombres" value="<?php echo $consulta[2] ?>" required />
                     <br>
                     <br>
                     <label for="apellidos">Apelidos (*)</label>
-                    <input type="text" id="apellidos" name="apellidos" value="<?php echo $consulta[2] ?>" required />
+                    <input type="text" id="apellidos" name="apellidos" value="<?php echo $consulta[3] ?>" required />
                     <br>
                     <br>
                     <label for="direccion">Dirección (*)</label>
-                    <input type="text" id="direccion" name="direccion" value="<?php echo $consulta[3] ?>" required />
+                    <input type="text" id="direccion" name="direccion" value="<?php echo $consulta[4] ?>" required />
                     <br>
                     <br>
                     <label for="telefono">Teléfono (*)</label>
-                    <input type="text" id="telefono" name="telefono" value="<?php echo $consulta[4] ?>" required />
+                    <input type="text" id="telefono" name="telefono" value="<?php echo $consulta[5] ?>" required />
                     <br>
                     <br>
                     <label for="fecha">Fecha Nacimiento (*)</label>
-                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $consulta[5] ?>"
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $consulta[6] ?>"
                         required />
                     <br>
                     <br>
                     <label for="correo">Correo electrónico (*)</label>
-                    <input type="email" id="correo" name="correo" value="<?php echo $consulta[6] ?>" required />
+                    <input type="email" id="correo" name="correo" value="<?php echo $consulta[7] ?>" required />
                     <br>
                     <br>
                     <div class="btn_form">
@@ -97,8 +105,25 @@ function ConsultarUsuario($usu_codigo){
 
                 <div class="containerPicture">
 
+
+
+
+
                     <div class="btn_form">
-                        <img class="perfil" src="../../../config/fotos/perfil.jpg" alt="">
+
+                        <?php
+
+                            $imagen='';
+                            
+                            if(strncmp($consulta[8],'../../../', 9) === 0   ){
+                                $imagen=$consulta[8];
+                           }else{
+                                $imagen='../'.$consulta[8];
+                           }
+                        ?>
+
+
+                        <img class="perfil" src='<?php echo ($imagen) ?>' alt="">
                         <br>
                         <input class="actualizar" type="file" id="foto" name="foto"
                             value="../../config/images/perfil.jpg" />
