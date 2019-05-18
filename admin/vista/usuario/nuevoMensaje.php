@@ -1,4 +1,3 @@
-
 <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
@@ -16,24 +15,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../config/styles/nuevoMensaje.css">
+    <link rel="stylesheet" href="../../../config/styles/menuH.css">
     <title>Contacto</title>
 
 </head>
 
 <body>
 
-    <div class="volver">
+    <header>
+        <div class="menu">
+            <ul>
+                <li><a href="../usuario/mensajesRecibidos.php">REGRESAR</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+
+    <!-- <div class="volver">
         <a href="Index.html">Volver</a>
-    </div>
+    </div> -->
 
-    <form  method="POST" action="../../controladores/usuario/enviarMensaje.php" >
+    <form method="POST" action="../../controladores/usuario/enviarMensaje.php">
 
-    <input type="hidden" name="codigoRemitente" value="<?php echo ($_SESSION['codigo']) ?>">
+        <input type="hidden" name="codigoRemitente" value="<?php echo ($_SESSION['codigo']) ?>">
 
-   
+
         <div>
             <label for="Asunto">Asunto:</label>
-            <input  name="asunto" type="text" id="asunto" />
+            <input name="asunto" type="text" id="asunto" />
         </div>
         <div>
             <label for="Remitente">Remitente:</label>
