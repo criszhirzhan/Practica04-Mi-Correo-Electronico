@@ -1,3 +1,13 @@
+
+<?php
+ session_start();
+ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
+     header("Location: /PRACTICA04-MI-CORREO-ELECTRONICO/public/vista/login.html");
+ }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,18 +26,22 @@
         <a href="Index.html">Volver</a>
     </div>
 
-    <form action="/my-handling-form-page" method="POST" action="../../../controladores/usuario/enviarMensaje.php" >
+    <form  method="POST" action="../../controladores/usuario/enviarMensaje.php" >
+
+    <input type="hidden" name="codigoRemitente" value="<?php echo ($_SESSION['codigo']) ?>">
+
+   
         <div>
             <label for="Asunto">Asunto:</label>
-            <input  type="text" id="asunto" />
+            <input  name="asunto" type="text" id="asunto" />
         </div>
         <div>
             <label for="Remitente">Remitente:</label>
-            <input type="email" id="remitente" />
+            <input name="destino" type="email" id="destino" />
         </div>
         <div>
             <label for="msg">Mensaje:</label>
-            <textarea class="mensaje" id="msg"></textarea>
+            <textarea name="msg" class="mensaje" id="msg"></textarea>
         </div>
 
         <div class="button">
