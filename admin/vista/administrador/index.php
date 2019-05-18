@@ -30,6 +30,12 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
 
          </header>
 
+         <br>
+         <br>
+         <h2 class="usrios">USUARIOS</h2>
+         <br>
+         <br>
+
 
 
          <table style="width:100%">
@@ -46,7 +52,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
                  <th>Eliminar</th>
                  <th>Modificar</th>
                  <th>Cambiar Contraseña</th>
-                 <th colspan="2" >Mensajes</th>
+                 <th colspan="2">Mensajes</th>
              </tr>
              <?php
                     include '../../../config/conexionBD.php';

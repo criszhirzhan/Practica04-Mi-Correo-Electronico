@@ -90,7 +90,7 @@
                    $fila = $crreo->fetch_assoc();
                    echo " <td>" . $fila["usu_correo"] . "</td>";
                    echo " <td>" . $row['mensaje_asunto'] ."</td>";
-                   echo " <td>" .'<a href="../../../admin/vista/usuario/eliminar.php" > Ver </a>'. "</td>";
+                   echo " <td>" .'<a href="verMensaje.php?mensaje_codigo='.$row["mensaje_codigo"].'" > Ver  </a>'."</td>";
                    echo "</tr>";
 
                    }

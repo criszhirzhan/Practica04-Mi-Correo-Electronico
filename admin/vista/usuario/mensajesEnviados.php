@@ -68,7 +68,7 @@
             <table style="width:100%">
                 <tr>
                     <th>Fecha</th>
-                    <th>Remitente</th>
+                    <th>Destino</th>
                     <th>Asunto</th>
                     <th></th>
                 </tr>
@@ -89,13 +89,12 @@
                     $fila = $crreo->fetch_assoc();
                     echo " <td>" . $fila["usu_correo"] . "</td>";
                     echo " <td>" . $row['mensaje_asunto'] ."</td>";
-                    echo " <td>" .'<a href="../../../admin/vista/usuario/eliminar.php" > Ver </a>'. "</td>";
+                    echo " <td>" .'<a href="verMensaje.php?mensaje_codigo='.$row["mensaje_codigo"].'" > Ver  </a>'."</td>";
                     echo "</tr>";
 
                     }
 
                     
-
                     } else {
                     echo "<tr>";
                     echo " <td colspan='7'> No existen mensajes </td>";
