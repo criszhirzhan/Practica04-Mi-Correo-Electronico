@@ -46,8 +46,16 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         usu_correo='".$correo."', usu_fecha_nacimiento='".$fechaNacimiento."', usu_fecha_modificacion='$fecha',
         usu_foto='$destino'  
         WHERE usu_codigo='".$codigo."'";
-        $conn->query($sql);
+
+        if ( $conn->query($sql) === TRUE) {
+        echo "<p>Se han modificado los datos!!!</p>";
+        header("Location: cuenta.php");
+        } else{
+        echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>";
+        }
         $conn->close();
+
+       
        
 }
 

@@ -30,6 +30,7 @@ form{
 .container {
 
     max-width: 750px;
+    height: auto;
 	background: rgba(0, 0, 0, .3);
 	margin: 5% auto;
     padding-bottom: 1rem;

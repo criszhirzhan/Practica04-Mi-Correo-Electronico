@@ -32,13 +32,11 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="../usuario/nuevoMensaje.php">Nuevo Mensaje</a></li>
-                    <li><a href="../usuario/mensajesRecibidos.php">Mensajes Recibidos</a></li>
-                    <li><a href="cuenta.php">Mi cuenta</a></li>
+                    <li><a href="index.php">Inicio</a></li>
 
                     <?php
                         include '../../../config/conexionBD.php';
-                        $sqlF = "SELECT * FROM usuario WHERE usu_codigo=".$_SESSION['codigo'].";  " ;
+                        $sqlF = "SELECT * FROM usuario WHERE usu_codigo=".$_GET['usu_codigo'].";  " ;
                         $enlace = $conn->query($sqlF);
                         $foto = $enlace->fetch_assoc();
 
@@ -62,8 +60,14 @@
 
         </header>
 
+        <br>
+        <br>
         <h2 class="titulo"> Mensajes Enviados</h2>
 
+        <br>
+        <br>
+      
+        <br>
         <div class="containerMensajerR">
             <table style="width:100%">
                 <tr>
@@ -75,7 +79,7 @@
                 <?php
                    
                     include '../../../config/conexionBD.php';
-                    $codigoRemitente=$_SESSION['codigo'];
+                    $codigoRemitente=$_GET['usu_codigo'];
                     $sql = "SELECT * FROM mensaje  WHERE mensaje_remitente='$codigoRemitente' ORDER BY mensaje_fecha DESC " ;
                     $result = $conn->query($sql);
 

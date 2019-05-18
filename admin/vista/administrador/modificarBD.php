@@ -12,6 +12,8 @@ ModificarUsuario(
         // $_POST['foto']
 );
 
+header("Location: modificar.php");
+
 function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $telefono, $fechaNacimiento, $correo) {
         include '../../../config/conexionBD.php';
         date_default_timezone_set("America/Guayaquil");
@@ -48,6 +50,7 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         WHERE usu_codigo='".$codigo."'";
         $conn->query($sql);
         $conn->close();
+
        
 }
 

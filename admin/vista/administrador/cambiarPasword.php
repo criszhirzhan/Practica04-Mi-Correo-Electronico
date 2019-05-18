@@ -23,7 +23,7 @@ $codigo=$_GET['usu_codigo'];
 
             <div class="menu">
                 <ul>
-                    <li><a href="../../public/vista/crear_usuario.html">CANCELAR</a></li>
+                    <li><a href="index.php">CANCELAR</a></li>
                 </ul>
             </div>
 

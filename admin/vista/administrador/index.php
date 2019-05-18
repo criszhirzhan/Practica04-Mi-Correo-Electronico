@@ -24,7 +24,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
 
              <div class="menu">
                  <ul>
-                     <li><a href="../../../admin/vista/usuario/cerrarSesion.php">Cerrar Sesion</a></li>
+                     <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
                  </ul>
              </div>
 
@@ -46,10 +46,11 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
                  <th>Eliminar</th>
                  <th>Modificar</th>
                  <th>Cambiar Contraseña</th>
+                 <th colspan="2" >Mensajes</th>
              </tr>
              <?php
                     include '../../../config/conexionBD.php';
-                    $sql = "SELECT * FROM usuario WHERE usu_eliminado='N'  AND usu_codigo=".$_SESSION['codigo']."; " ;
+                    $sql = "SELECT * FROM usuario WHERE usu_eliminado='N'  AND usu_tipo_user='user' " ;
                     $result = $conn->query($sql);
 
 
@@ -57,11 +58,6 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
 
 
                     if ($result->num_rows > 0) {
-                        $tipoUser = $result->fetch_assoc();
- 
-                        if($tipoUser['usu_tipo_user']=='user'){
-                            $sql = "SELECT * FROM usuario WHERE usu_eliminado='N'  AND usu_codigo=".$_SESSION['codigo']."; " ;
-                            $result = $conn->query($sql);
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>";
                                 echo " <td>" . $row["usu_codigo"] . "</td>";
@@ -82,42 +78,14 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
                                 echo " <td>" .'<a href="../../../admin/vista/usuario/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
+                                echo " <td>" .'<a href="../administrador/mensajesRecibidos.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Recibidos </a>'."</td>";
+                                echo " <td>" .'<a href="../administrador/mensajesEnviados.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Enviados </a>'."</td>";
+
                                 echo "</tr>";
+
+                            
             
                                 }
-
-                        }else{
-                            $sql = "SELECT * FROM usuario WHERE usu_eliminado='N'  AND usu_tipo_user='user' " ;
-                            $result = $conn->query($sql);
-
-                            while($row = $result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo " <td>" . $row["usu_codigo"] . "</td>";
-                                echo " <td>" . $row["usu_cedula"] . "</td>";
-                                echo " <td>" . $row['usu_nombres'] ."</td>";
-                                echo " <td>" . $row['usu_apellidos'] . "</td>";
-                                echo " <td>" . $row['usu_direccion'] . "</td>";
-                                echo " <td>" . $row['usu_telefono'] . "</td>";
-                                echo " <td>" . $row['usu_correo'] . "</td>";
-                                echo " <td>" . $row['usu_fecha_nacimiento'] . "</td>";
-            
-                                if(strncmp($row["usu_foto"],'../../../', 9) === 0   ){
-                                    echo " <td><img class='perfil' src='".$row["usu_foto"]."' ></td>";
-                                }else{
-                                        echo " <td><img class='perfil' src='../".$row["usu_foto"]."' ></td>";
-                                    
-                                }
-                                echo " <td>" .'<a href="../../../admin/vista/usuario/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
-                                echo " <td>" .'<a href="../administrador/modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
-                                echo " <td>" .'<a href="../administrador/cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
-                                echo "</tr>";
-            
-                                }
-
-
-                        }
-                
-
                     } else {
                     echo "<tr>";
                     echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";

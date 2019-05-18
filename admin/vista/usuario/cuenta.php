@@ -25,7 +25,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
 
              <div class="menu">
                  <ul>
-                     <li><a href="../../../admin/vista/usuario/cerrarSesion.php">Cerrar Sesion</a></li>
+                     <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
                      <li><a href="mensajesRecibidos.php">Volver</a></li>
                  </ul>
              </div>
