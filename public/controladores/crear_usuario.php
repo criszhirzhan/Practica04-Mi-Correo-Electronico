@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php
+<?php
  //incluir conexión a la base de datos
  include '../../config/conexionBD.php';
  $cedula = isset($_POST["cedula"]) ? trim($_POST["cedula"]) : null;
@@ -47,7 +47,7 @@
 
 
  $sql = "INSERT INTO usuario() VALUES (0,'$cedula', '$nombres', '$apellidos', '$direccion', '$telefono',
-'$correo', MD5('$contrasena'), '$fechaNacimiento', 'N', null, null,'user','Yes','$destino')";
+ '$correo', MD5('$contrasena'), '$fechaNacimiento', 'N', null, null,'user','Yes','$destino')";
  if ($conn->query($sql) === TRUE) {
  echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
  } else {
@@ -62,7 +62,7 @@
  $conn->close();
  echo "<a href='../vista/crear_usuario.html'>Regresar</a>";
  
- ?>
+?>
 </body>
 
 </html>

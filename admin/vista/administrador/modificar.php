@@ -2,7 +2,7 @@
 $consulta=ConsultarUsuario($_GET['usu_codigo']);
 
 function ConsultarUsuario($usu_codigo){
-        include '../../../config/conexionBD.php';
+    include '../../../config/conexionBD.php';
 
     $sql="SELECT * from usuario WHERE usu_codigo='".$usu_codigo."' ";
     $result=$conn->query($sql);
@@ -104,10 +104,6 @@ function ConsultarUsuario($usu_codigo){
 
 
                 <div class="containerPicture">
-
-
-
-
 
                     <div class="btn_form">
 
