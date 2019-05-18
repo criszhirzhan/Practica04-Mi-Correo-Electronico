@@ -1,4 +1,3 @@
-
 <?php
    
    session_start();
@@ -17,6 +16,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../config/styles/menuH.css">
     <link rel="stylesheet" href="../../../config/styles/mensajesR.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="../../../config/Ajax/ajax.js"></script>
     <title>Document</title>
 </head>
 
@@ -33,9 +35,9 @@
                     <li><a href="../usuario/mensajesEnviados.php">Mensajes Enviados</a></li>
                     <li><a href="cuenta.php">Mi cuenta</a></li>
 
-                
 
-                    
+
+
                     <?php
                         include '../../../config/conexionBD.php';
                         $sqlF = "SELECT * FROM usuario WHERE usu_codigo=".$_SESSION['codigo'].";  " ;
@@ -56,16 +58,29 @@
                     ?>
 
 
-                    <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../"></li>
+                    <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../">
+                        <span>
+                            <h5 class="nombreUser"><?php echo ($foto['usu_nombres'].' '.$foto['usu_apellidos']) ?></h5>
+                        </span>
+
+                    </li>
                 </ul>
             </div>
 
         </header>
 
+        <br>
+        <br>
         <h2 class="titulo"> Mensajes Recibidos</h2>
 
         <div class="containerMensajerR">
-            <table style="width:100%">
+
+            <input class="barraBusqueda" id="barraBusqueda" type="text" />
+            <button class="buscar" type="submit" onclick="buscarCorreo()">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <table id="tabla" style="width:100%">
                 <tr>
                     <th>Fecha</th>
                     <th>Remitente</th>
@@ -102,7 +117,7 @@
                    echo "</tr>";
                    }
                    $conn->close();
-           ?>
+                 ?>
 
             </table>
 

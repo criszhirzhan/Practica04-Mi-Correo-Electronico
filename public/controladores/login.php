@@ -6,7 +6,7 @@
 
 
  $sql = "SELECT * FROM usuario WHERE usu_correo = '$usuario' and usu_password =
-MD5('$contrasena')";
+MD5('$contrasena') and usu_eliminado='N' ";
  $result = $conn->query($sql);
  $row = $result->fetch_assoc();
  if ($result->num_rows > 0) {

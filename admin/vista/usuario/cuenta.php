@@ -32,6 +32,11 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
 
          </header>
 
+         <br>
+         <br>
+
+
+
 
 
          <table style="width:100%">

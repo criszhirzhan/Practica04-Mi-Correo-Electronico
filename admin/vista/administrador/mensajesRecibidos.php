@@ -16,6 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../config/styles/menuH.css">
     <link rel="stylesheet" href="../../../config/styles/mensajesR.css">
+
     <title>Document</title>
 </head>
 
@@ -49,7 +50,11 @@
                     ?>
 
 
-                    <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../"></li>
+                    <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../">
+                        <span>
+                            <h5 class="nombreUser"><?php echo ($foto['usu_nombres'].' '.$foto['usu_apellidos']) ?></h5>
+                        </span>
+                    </li>
                 </ul>
             </div>
 
@@ -58,7 +63,12 @@
         <h2 class="titulo"> Mensajes Recibidos</h2>
 
         <div class="containerMensajerR">
+
+
+
             <table style="width:100%">
+
+
                 <tr>
                     <th>Fecha</th>
                     <th>Remitente</th>

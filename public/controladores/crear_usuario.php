@@ -50,17 +50,20 @@
  '$correo', MD5('$contrasena'), '$fechaNacimiento', 'N', null, null,'user','Yes','$destino')";
  if ($conn->query($sql) === TRUE) {
  echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
+ header("Location: ../vista/login.html") ;
  } else {
  if($conn->errno == 1062){
  echo "<p class='error'>La persona con la cedula $cedula ya esta registrada en el sistema </p>";
+ header("Location: ../vista/crear_usuario.html") ;
  }else{
  echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>";
+ header("Location: ../vista/crear_usuario.html") ;
  }
  }
 
  //cerrar la base de datos
  $conn->close();
- echo "<a href='../vista/crear_usuario.html'>Regresar</a>";
+
  
 ?>
 </body>

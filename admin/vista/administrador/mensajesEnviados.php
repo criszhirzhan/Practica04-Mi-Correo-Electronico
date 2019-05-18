@@ -1,6 +1,3 @@
-
-
-
 <?php
  session_start();
  if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
@@ -54,7 +51,11 @@
                     ?>
 
 
-                    <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../"></li>
+                    <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../">
+                        <span>
+                            <h5  class="nombreUser"><?php echo ($foto['usu_nombres'].' '.$foto['usu_apellidos']) ?></h5>
+                        </span>
+                    </li>
                 </ul>
             </div>
 
@@ -66,9 +67,10 @@
 
         <br>
         <br>
-      
+
         <br>
         <div class="containerMensajerR">
+
             <table style="width:100%">
                 <tr>
                     <th>Fecha</th>
