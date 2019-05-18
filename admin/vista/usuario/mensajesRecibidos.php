@@ -31,7 +31,7 @@
                     <li><a href="">Inicio</a></li>
                     <li><a href="../usuario/nuevoMensaje.php">Nuevo Mensaje</a></li>
                     <li><a href="../usuario/mensajesEnviados.php">Mensajes Enviados</a></li>
-                    <li><a href="">Mi cuenta</a></li>
+                    <li><a href="cuenta.php">Mi cuenta</a></li>
                     <li><img class="perfil1" src="../../../config/fotos/perfil.jpg" alt="../"></li>
                 </ul>
             </div>

@@ -35,7 +35,7 @@
                     <li><a href="">Inicio</a></li>
                     <li><a href="../usuario/nuevoMensaje.php">Nuevo Mensaje</a></li>
                     <li><a href="../usuario/mensajesRecibidos.php">Mensajes Recibidos</a></li>
-                    <li><a href="">Mi cuenta</a></li>
+                    <li><a href="cuenta.php">Mi cuenta</a></li>
 
                     <?php
                         include '../../../config/conexionBD.php';
