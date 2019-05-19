@@ -81,7 +81,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
                                         echo " <td><img class='perfil' src='../".$row["usu_foto"]."' ></td>";
                                     
                                 }
-                                echo " <td>" .'<a href="../../../admin/vista/usuario/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
+                                echo " <td>" .'<a href="../administrador/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/mensajesRecibidos.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Recibidos </a>'."</td>";

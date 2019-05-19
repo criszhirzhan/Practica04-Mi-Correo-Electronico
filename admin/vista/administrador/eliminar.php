@@ -12,9 +12,9 @@
     }elseif($cod!=null and $delete==false){
         $sql= "UPDATE usuario SET usu_eliminado='N', usu_fecha_modificacion='$fecha' WHERE usu_codigo='$cod';";             
         $result = $conn->query($sql);
-        header("Location: ../usuario/index.php");
+        header("Location: index.php");
     }else{
-        header("Location: ../usuario/index.php");
+        header("Location: index.php");
     }
     $conn->close();
 ?>
