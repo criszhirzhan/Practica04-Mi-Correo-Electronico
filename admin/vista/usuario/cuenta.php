@@ -24,7 +24,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
 
             <div class="menu">
                 <ul>
-                    <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
+                    <li><a href="../../controladores/usuario/cerrarSesion.php">Cerrar Sesion</a></li>
                     <li><a href="mensajesRecibidos.php">Volver</a></li>
                 </ul>
             </div>
@@ -84,9 +84,9 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
                                         echo " <td><img class='perfil' src='../".$row["usu_foto"]."' ></td>";
                                     
                                 }
-                                echo " <td>" .'<a class="enlace" href="../../controladores/usuario/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
-                                echo " <td>" .'<a class="enlace" href="modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
-                                echo " <td>" .'<a class="enlace" href="cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
+                                echo " <td>" .'<a class="enlace" style="text-decoration: none; color:white " href="../../controladores/usuario/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
+                                echo " <td>" .'<a class="enlace" style="text-decoration: none; color:white " href="modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
+                                echo " <td>" .'<a class="enlace" style="text-decoration: none; color:white " href="cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
                                 echo "</tr>";
                                 
                             }

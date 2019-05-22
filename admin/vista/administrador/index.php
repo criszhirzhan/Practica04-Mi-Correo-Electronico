@@ -81,11 +81,11 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
                                         echo " <td><img class='perfil' src='../".$row["usu_foto"]."' ></td>";
                                     
                                 }
-                                echo " <td>" .'<a href="../../controladores/administrador/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
-                                echo " <td>" .'<a href="../administrador/modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
-                                echo " <td>" .'<a href="../administrador/cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
-                                echo " <td>" .'<a href="../administrador/mensajesRecibidos.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Recibidos </a>'."</td>";
-                                echo " <td>" .'<a href="../administrador/mensajesEnviados.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Enviados </a>'."</td>";
+                                echo " <td>" .'<a style="text-decoration: none; color:white " href="../../controladores/administrador/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
+                                echo " <td>" .'<a style="text-decoration: none; color:white " href="../administrador/modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
+                                echo " <td>" .'<a style="text-decoration: none; color:white " href="../administrador/cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
+                                echo " <td>" .'<a style="text-decoration: none; color:white " href="../administrador/mensajesRecibidos.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Recibidos </a>'."</td>";
+                                echo " <td>" .'<a style="text-decoration: none; color:white " href="../administrador/mensajesEnviados.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Enviados </a>'."</td>";
 
                                 echo "</tr>";
 
