@@ -53,7 +53,7 @@
 
                     <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../">
                         <span>
-                            <h5  class="nombreUser"><?php echo ($foto['usu_nombres'].' '.$foto['usu_apellidos']) ?></h5>
+                            <h5 class="nombreUser"><?php echo ($foto['usu_nombres'].' '.$foto['usu_apellidos']) ?></h5>
                         </span>
                     </li>
                 </ul>
@@ -115,6 +115,32 @@
         </div>
 
 
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="piePagina">
+
+        <footer>
+
+            <address>
+
+                Christian Daniel Zhirzhan Cabrera<br>
+                Universidad Politecnica Salesiana<br>
+            </address>
+            <br>
+            <p>&copy; Todos los derechos reservados</p>
+        </footer>
     </div>
 </body>
 

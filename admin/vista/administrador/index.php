@@ -24,7 +24,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
 
              <div class="menu">
                  <ul>
-                     <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
+                     <li><a href="../../controladores/administrador/cerrarSesion.php">Cerrar Sesion</a></li>
                  </ul>
              </div>
 
@@ -81,7 +81,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
                                         echo " <td><img class='perfil' src='../".$row["usu_foto"]."' ></td>";
                                     
                                 }
-                                echo " <td>" .'<a href="../administrador/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
+                                echo " <td>" .'<a href="../../controladores/administrador/eliminar.php?usu_codigo='.$row["usu_codigo"]. '&delete=' . true .'" > Eliminar </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/modificar.php?usu_codigo='.$row["usu_codigo"].'" > Modificar </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/cambiarPasword.php?usu_codigo='.$row["usu_codigo"].'" > Cambiar Contraseña </a>'. "</td>";
                                 echo " <td>" .'<a href="../administrador/mensajesRecibidos.php?usu_codigo='.$row["usu_codigo"].'" > Ver Mensajes Recibidos </a>'."</td>";
@@ -101,6 +101,32 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
             ?>
          </table>
 
+     </div>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+
+     <div class="piePagina">
+
+         <footer>
+
+             <address>
+
+                 Christian Daniel Zhirzhan Cabrera<br>
+                 Universidad Politecnica Salesiana<br>
+             </address>
+             <br>
+             <p>&copy; Todos los derechos reservados</p>
+         </footer>
      </div>
 
  </body>

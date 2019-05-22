@@ -98,10 +98,24 @@ th, td {
 
 }
 
+li a:active {
+    color: blue;
+}
+
 .nombreUser{
     text-align: center;
 }
 
+
+li a {
+    text-decoration: none;
+    
+}
+
+li a:hover {
+   
+    color: white;
+}
 
 
 

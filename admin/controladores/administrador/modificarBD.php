@@ -12,7 +12,7 @@ ModificarUsuario(
         // $_POST['foto']
 );
 
-header("Location: modificar.php");
+header("Location:../../vista/administrador/index.php");
 
 function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $telefono, $fechaNacimiento, $correo) {
         include '../../../config/conexionBD.php';
@@ -26,7 +26,10 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         echo "Ruta = $ruta";
  
         if(empty($fotoN)){
-        $destino="../../config/fotos/perfil.jpg";
+        $consultarFoto="SELECT * from usuario WHERE usu_codigo='".$codigo."' ";
+        $result=$conn->query($consultarFoto);
+        $filas=$result->fetch_assoc();
+        $destino=$filas['usu_foto'];
         }else{
         $random_digit = rand (0000,9999);
 	$new_foto = $random_digit. $fotoN;
@@ -38,10 +41,6 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         copy($ruta, $destino);
         }
 
-        echo "Codigo=  $codigo";
-
-
-
 
         $sql="UPDATE usuario SET usu_cedula='".$cedula."', usu_nombres='".$nombres."',
         usu_apellidos='".$apellidos."', usu_direccion='".$direccion."', usu_telefono='".$telefono."',
@@ -51,7 +50,6 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         $conn->query($sql);
         $conn->close();
 
-       
 }
 
 ?>

@@ -52,8 +52,21 @@ header label:hover{
     padding: 0;
     display: flex;
     justify-content: center;
-   
 }
+
+th td .enlace {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+}
+
+/* li a:hover {
+   
+    color: white;
+
+    
+}  */
+
 
 .menu li:hover{
    background: rgba(179, 105, 35, 0.705);

@@ -32,10 +32,6 @@
     </header>
 
 
-    <!-- <div class="volver">
-        <a href="Index.html">Volver</a>
-    </div> -->
-
     <form method="POST" action="../../controladores/usuario/enviarMensaje.php">
 
         <input type="hidden" name="codigoRemitente" value="<?php echo ($_SESSION['codigo']) ?>">

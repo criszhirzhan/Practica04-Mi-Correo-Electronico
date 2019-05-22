@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 ModificarUsuario(
         $_POST['codigo'],
         $_POST['cedula'],
@@ -24,7 +27,10 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         echo "Ruta = $ruta";
  
         if(empty($fotoN)){
-        $destino="../../config/fotos/perfil.jpg";
+        $consultarFoto="SELECT * from usuario WHERE usu_codigo='".$codigo."' ";
+        $result=$conn->query($consultarFoto);
+        $filas=$result->fetch_assoc();
+        $destino=$filas['usu_foto'];
         }else{
         $random_digit = rand (0000,9999);
 	$new_foto = $random_digit. $fotoN;
@@ -37,10 +43,6 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         }
 
         echo "Codigo=  $codigo";
-
-
-
-
         $sql="UPDATE usuario SET usu_cedula='".$cedula."', usu_nombres='".$nombres."',
         usu_apellidos='".$apellidos."', usu_direccion='".$direccion."', usu_telefono='".$telefono."',
         usu_correo='".$correo."', usu_fecha_nacimiento='".$fechaNacimiento."', usu_fecha_modificacion='$fecha',
@@ -49,7 +51,7 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
 
         if ( $conn->query($sql) === TRUE) {
         echo "<p>Se han modificado los datos!!!</p>";
-        header("Location: cuenta.php");
+        header("Location: ../../vista/usuario/cuenta.php");
         } else{
         echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>";
         }

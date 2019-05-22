@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
+    header("Location: /PRACTICA04-MI-CORREO-ELECTRONICO/public/vista/login.html");
+}
+
+
+
 $consulta=ConsultarUsuario($_GET['usu_codigo']);
 
 function ConsultarUsuario($usu_codigo){
@@ -61,7 +69,7 @@ function ConsultarUsuario($usu_codigo){
                 <h2>Modificar <span>Datos</span></h2>
             </div>
 
-            <form id="formulario02" method="POST" action="modificarBD.php" enctype="multipart/form-data">
+            <form id="formulario02" method="POST" action="../../controladores/usuario/modificarBD.php" enctype="multipart/form-data">
                 <div class="container1 ">
                     <input type="hidden" id="codigo" name="codigo" value="<?php echo $consulta[0] ?>">
 
@@ -122,7 +130,7 @@ function ConsultarUsuario($usu_codigo){
                         <img class="perfil" src='<?php echo ($imagen) ?>' alt="">
                         <br>
                         <input class="actualizar" type="file" id="foto" name="foto"
-                            value="../../config/images/perfil.jpg" />
+                            value="<?php echo($imagen)  ?>" />
                     </div>
 
                 </div>

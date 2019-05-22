@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="../../../config/Ajax/ajax.js"></script>
-    <title>Document</title>
+    <title>Mensajes Enviados</title>
 </head>
 
 <body>
@@ -58,7 +58,7 @@
 
                     <li><img class="perfil1" src='<?php echo ($imagen) ?>' alt="../">
                         <span>
-                            <h5  class="nombreUser"><?php echo ($foto['usu_nombres'].' '.$foto['usu_apellidos']) ?></h5>
+                            <h5 class="nombreUser"><?php echo ($foto['usu_nombres'].' '.$foto['usu_apellidos']) ?></h5>
                         </span>
 
 
@@ -129,6 +129,32 @@
         </div>
 
 
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="piePagina">
+
+        <footer>
+
+            <address>
+
+                Christian Daniel Zhirzhan Cabrera<br>
+                Universidad Politecnica Salesiana<br>
+            </address>
+            <br>
+            <p>&copy; Todos los derechos reservados</p>
+        </footer>
     </div>
 </body>
 

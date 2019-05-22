@@ -24,10 +24,10 @@ if (MD5($actual) === $result["usu_password"]) {
         $fecha=date('Y-m-d H:i:s', time());
         $sql = "UPDATE usuario SET usu_password = MD5('$nueva'), usu_fecha_modificacion='$fecha' WHERE usu_codigo ='$cod'";
         if ($conn->query($sql) === true) {
-            echo "<h2>Contrasena actulizada con exito</h2>";
-            include '../../../admin/vista/usuario/index.php';
+            echo "<h2>Contrasena actualizada con exito</h2>";
+            header("Location: ../../vista/administrador/index.php");
         } else {
-            header("Location: ../usuario/cambiar_contrasena.php");
+            header("Location: ../../vista/administrador/cambiarPasword.php");
         }
     }
 }

@@ -114,6 +114,32 @@
 
 
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="piePagina">
+
+        <footer>
+
+            <address>
+
+                Christian Daniel Zhirzhan Cabrera<br>
+                Universidad Politecnica Salesiana<br>
+            </address>
+            <br>
+            <p>&copy; Todos los derechos reservados</p>
+        </footer>
+    </div>
 </body>
 
 </html>

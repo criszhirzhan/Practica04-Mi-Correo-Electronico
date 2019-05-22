@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
+    header("Location: /PRACTICA04-MI-CORREO-ELECTRONICO/public/vista/login.html");
+}
+
 $codigo=$_GET['usu_codigo'];
 ?>
 
@@ -30,7 +36,7 @@ $codigo=$_GET['usu_codigo'];
         </header>
 
         <form id="formulario04" method="POST"
-            action="../../../admin/vista/usuario/cambiarPaswordBD.php?usu_codigo=<?php $cod=$_GET['usu_codigo']; echo($cod); ?>">
+            action="../../controladores/administrador/cambiarPaswordBD.php?usu_codigo=<?php $cod=$_GET['usu_codigo']; echo($cod); ?>">
             <label class="contrasenia" for="ContraseñaAnt">Antigua Contraseña </label>
             <input type="password" id="antcontrasena" name="antcontrasena" value=""
                 placeholder="Ingrese la contraseña antigua ..." />
