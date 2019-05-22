@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 ModificarUsuario(
         $_POST['codigo'],
         $_POST['cedula'],
@@ -31,6 +28,7 @@ function ModificarUsuario ($codigo ,$cedula, $nombres, $apellidos, $direccion, $
         $result=$conn->query($consultarFoto);
         $filas=$result->fetch_assoc();
         $destino=$filas['usu_foto'];
+        
         }else{
         $random_digit = rand (0000,9999);
 	$new_foto = $random_digit. $fotoN;

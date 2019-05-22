@@ -25,6 +25,7 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
              <div class="menu">
                  <ul>
                      <li><a href="../../controladores/administrador/cerrarSesion.php">Cerrar Sesion</a></li>
+                     <li><a href="indexMensajes.php">Mensajes</a></li>
                  </ul>
              </div>
 
