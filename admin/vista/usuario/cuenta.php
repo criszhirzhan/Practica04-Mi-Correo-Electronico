@@ -112,6 +112,14 @@ if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged']===FALSE){
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
     <div class="piePagina">
