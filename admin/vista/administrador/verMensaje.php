@@ -65,7 +65,7 @@ $conn->close();
             <input name="asunto" type="text" id="asunto" value="<?php echo($consulta[0]) ?>" />
         </div>
         <div>
-            <label for="Remitente">Remitente:</label>
+            <label for="Remitente">Destino:</label>
             <input name="destino" type="email" id="destino" value="<?php echo($correoDestino) ?>" />
         </div>
         <div>

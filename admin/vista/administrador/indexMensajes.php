@@ -62,7 +62,7 @@
                     while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo " <td>" . $row["mensaje_fecha"] . "</td>";
-                    $correODest = "SELECT * FROM usuario WHERE usu_codigo=".$row["mensaje_destino"].";" ;
+                    $correODest = "SELECT * FROM usuario WHERE usu_codigo=".$row["mensaje_remitente"].";" ;
                     $crreo = $conn->query($correODest);
                     $fila = $crreo->fetch_assoc();
                     echo " <td>" . $fila["usu_correo"] . "</td>";
